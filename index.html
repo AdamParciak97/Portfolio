@@ -26,8 +26,8 @@
 
 /* HEADER */
 header {
-background: var(–white);
-border-bottom: 1px solid var(–border);
+background: var(--white);
+border-bottom: 1px solid var(--border);
 padding: 20px 40px;
 display: flex;
 align-items: center;
@@ -39,7 +39,7 @@ z-index: 100;
 .logo { font-family:‘Instrument Serif’, serif; font-size: 22px; letter-spacing:-0.02em; }
 .logo span { font-style: italic; }
 .contact-btn {
-background: var(–ink);
+background: var(--ink);
 color: white;
 padding: 10px 22px;
 border-radius: 100px;
@@ -59,7 +59,7 @@ text-align: center;
 }
 .hero-tag {
 display: inline-block;
-background: var(–ink);
+background: var(--ink);
 color: white;
 font-family: ‘DM Mono’, monospace;
 font-size: 11px;
@@ -78,7 +78,7 @@ margin-bottom: 20px;
 h1 em { font-style: italic; color: #555; }
 .hero p {
 font-size: 18px;
-color: var(–muted);
+color: var(--muted);
 max-width: 520px;
 margin: 0 auto 40px;
 font-weight: 300;
@@ -91,10 +91,10 @@ flex-wrap: wrap;
 }
 .stat { text-align: center; }
 .stat-num { font-family:‘Instrument Serif’, serif; font-size: 36px; letter-spacing:-0.03em; }
-.stat-label { font-size: 12px; color: var(–muted); font-family:‘DM Mono’,monospace; letter-spacing:.03em; }
+.stat-label { font-size: 12px; color: var(--muted); font-family:‘DM Mono’,monospace; letter-spacing:.03em; }
 
 /* DIVIDER */
-hr { border:none; border-top:1px solid var(–border); }
+hr { border:none; border-top:1px solid var(--border); }
 
 /* SECTION */
 .section { max-width: 900px; margin: 0 auto; padding: 64px 32px; }
@@ -102,15 +102,15 @@ hr { border:none; border-top:1px solid var(–border); }
 font-family: ‘DM Mono’, monospace;
 font-size: 11px;
 letter-spacing: 0.12em;
-color: var(–muted);
+color: var(--muted);
 margin-bottom: 40px;
 text-transform: uppercase;
 }
 
 /* WORKFLOW CARDS */
 .workflow-card {
-background: var(–white);
-border: 1px solid var(–border);
+background: var(--white);
+border: 1px solid var(--border);
 border-radius: 20px;
 overflow: hidden;
 margin-bottom: 32px;
@@ -120,18 +120,19 @@ transition: box-shadow 0.3s;
 
 .card-header {
 padding: 32px 36px 24px;
-border-bottom: 1px solid var(–border);
+border-bottom: 1px solid var(--border);
 display: flex;
 justify-content: space-between;
 align-items: flex-start;
 gap: 20px;
-flex-wrap: wrap;
+flex-wrap: nowrap;
 }
+@media(max-width: 640px) { .card-header { flex-wrap: wrap; } }
 .card-emoji { font-size: 40px; margin-bottom: 12px; display: block; }
 .card-number {
 font-family: ‘DM Mono’, monospace;
 font-size: 11px;
-color: var(–muted);
+color: var(--muted);
 letter-spacing: .08em;
 margin-bottom: 8px;
 }
@@ -142,9 +143,9 @@ letter-spacing: -0.02em;
 margin-bottom: 8px;
 line-height: 1.1;
 }
-.card-subtitle { font-size: 14px; color: var(–muted); max-width: 480px; }
+.card-subtitle { font-size: 14px; color: var(--muted); max-width: 480px; }
 .price-badge {
-background: var(–ink);
+background: var(--ink);
 color: white;
 padding: 8px 18px;
 border-radius: 100px;
@@ -160,36 +161,40 @@ flex-shrink: 0;
 .flow-steps {
 display: flex;
 align-items: center;
+justify-content: flex-start;
 gap: 0;
-flex-wrap: wrap;
+flex-wrap: nowrap;
+overflow-x: auto;
 margin-bottom: 28px;
 padding: 20px 24px;
-background: var(–bg);
+background: var(--bg);
 border-radius: 12px;
-border: 1px solid var(–border);
+border: 1px solid var(--border);
+scrollbar-width: none;
 }
-.fs { display:flex;flex-direction:column;align-items:center;gap:6px;min-width:72px; }
-.fs-icon { width:40px;height:40px;border-radius:10px;background:white;border:1px solid var(–border);display:flex;align-items:center;justify-content:center;font-size:18px; }
-.fs-label { font-family:‘DM Mono’,monospace;font-size:9px;color:var(–muted);text-align:center;letter-spacing:.02em; }
-.fs-arrow { color:#ccc;font-size:16px;padding:0 4px;margin-bottom:18px; }
+.flow-steps::-webkit-scrollbar { display: none; }
+.fs { display:flex;flex-direction:column;align-items:center;gap:6px;min-width:68px;flex-shrink:0; }
+.fs-icon { width:40px;height:40px;border-radius:10px;background:white;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0; }
+.fs-label { font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);text-align:center;letter-spacing:.02em;white-space:nowrap; }
+.fs-arrow { color:#ccc;font-size:16px;padding:0 4px;margin-bottom:18px;flex-shrink:0; }
 
 /* TWO COL */
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
 @media(max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
 
 .info-box {
-border: 1px solid var(–border);
+border: 1px solid var(--border);
 border-radius: 12px;
 padding: 18px 20px;
 }
 .info-box-label {
 font-family: ‘DM Mono’, monospace;
 font-size: 10px;
-color: var(–muted);
+color: var(--muted);
 letter-spacing: .08em;
 margin-bottom: 10px;
 }
-.info-box p { font-size: 13.5px; color: var(–ink); line-height: 1.6; }
+.info-box p { font-size: 13.5px; color: var(--ink); line-height: 1.6; }
 
 /* VALUE PROPS */
 .value-props { display: flex; flex-direction: column; gap: 10px; }
@@ -199,17 +204,17 @@ align-items: flex-start;
 gap: 10px;
 font-size: 14px;
 }
-.vp-icon { color: var(–green); font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+.vp-icon { color: var(--green); font-size: 16px; flex-shrink: 0; margin-top: 1px; }
 
 /* TARGETS */
 .targets { display: flex; flex-wrap: wrap; gap: 8px; }
 .target-tag {
-background: var(–bg);
-border: 1px solid var(–border);
+background: var(--bg);
+border: 1px solid var(--border);
 border-radius: 100px;
 padding: 4px 12px;
 font-size: 12px;
-color: var(–muted);
+color: var(--muted);
 font-family: ‘DM Mono’, monospace;
 }
 
@@ -217,17 +222,17 @@ font-family: ‘DM Mono’, monospace;
 .tools { display:flex;flex-wrap:wrap;gap:8px;margin-top:16px; }
 .tool {
 background: white;
-border: 1px solid var(–border);
+border: 1px solid var(--border);
 border-radius: 8px;
 padding: 4px 10px;
 font-size: 12px;
 font-family: ‘DM Mono’, monospace;
-color: var(–muted);
+color: var(--muted);
 }
 
 /* CTA */
 .cta-section {
-background: var(–ink);
+background: var(--ink);
 color: white;
 border-radius: 20px;
 padding: 56px 48px;
@@ -249,7 +254,7 @@ line-height: 1.1;
 .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .cta-btn-primary {
 background: white;
-color: var(–ink);
+color: var(--ink);
 padding: 14px 28px;
 border-radius: 100px;
 font-size: 15px;
@@ -273,12 +278,12 @@ transition: border-color .2s;
 
 /* NOTE */
 .note {
-background: var(–amber-bg);
-border: 1px solid var(–amber-border);
+background: var(--amber-bg);
+border: 1px solid var(--amber-border);
 border-radius: 10px;
 padding: 14px 18px;
 font-size: 13px;
-color: var(–amber);
+color: var(--amber);
 margin-top: 16px;
 }
 </style>
@@ -288,7 +293,7 @@ margin-top: 16px;
 
 <header>
   <div class="logo">auto<span>matyzacje</span></div>
-  <a href="mailto:parciakadam1@gmail.com" class="contact-btn">Zapytaj o wycenę →</a>
+  <a href="/cdn-cgi/l/email-protection#94e4f5e6f7fdf5fff5f0f5f9a5d4f3f9f5fdf8baf7fbf9" class="contact-btn">Zapytaj o wycenę →</a>
 </header>
 
 <!-- HERO -->
@@ -780,10 +785,5 @@ margin-top: 16px;
   <h2>Masz inny proces<br><em>do zautomatyzowania?</em></h2>
   <p>Opisz mi swój problem — zaprojektuję rozwiązanie pod Twój biznes.</p>
   <div class="cta-buttons">
-    <a href="mailto:parciakadam1@gmail.com" class="cta-btn-primary">Napisz do mnie →</a>
-    <a href="https://useme.com" target="_blank" class="cta-btn-secondary">Znajdź mnie na Useme</a>
-  </div>
-</div>
-
-</body>
-</html>
+    <a href="/cdn-cgi/l/email-protection#2e5e4f5c4d474f454f4a4f431f6e49434f4742004d4143" class="cta-btn-primary">Napisz do mnie →</a>
+    <a href="https://useme.com" target="_bl
